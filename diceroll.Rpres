@@ -1,0 +1,58 @@
+Roll the Dice
+========================================================
+author: Michael Joslyn
+date: 6/19/2016
+
+Overview
+========================================================
+
+The Roll the Dice application is used to demonstrate
+that the mean and standard deviation approach the
+expected value as the sample size gets larger.
+
+The following slides show the results that can be
+expected when running the application.
+
+Small Sample (10 dice rolls)
+========================================================
+
+```{r,echo=FALSE}
+num_rolls <- 10
+res <- sample(1:6, size = num_rolls, replace = TRUE) + sample(1:6, num_rolls, replace = TRUE)
+```
+Mean and Standard Deviation:
+```{r,echo=FALSE}
+mean(res)
+sd(res)
+```
+```{r}
+hist(res, breaks=12, col = 'skyblue', border = 'white', xlab="Roll Result",
+     ylab="Frequency", main="Histogram of Dice Rolls")
+```
+
+Large Sample (10000 dice rolls)
+========================================================
+
+```{r,echo=FALSE}
+num_rolls <- 10000
+res <- sample(1:6, size = num_rolls, replace = TRUE) + sample(1:6, num_rolls, replace = TRUE)
+```
+Mean and Standard Deviation:
+```{r,echo=FALSE}
+mean(res)
+sd(res)
+```
+```{r}
+hist(res, breaks=12, col = 'skyblue', border = 'white', xlab="Roll Result",
+     ylab="Frequency", main="Histogram of Dice Rolls")
+```
+
+Conclusion
+========================================================
+The Roll the Dice application is a useful tool in
+demonstrating the impact increasing the sample size
+has.
+
+The small and large sample size examples in the previous
+slides show how the mean and sd converge on the expected
+values of 7.0 and 2.412, respectively.
